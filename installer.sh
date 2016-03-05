@@ -1,4 +1,4 @@
-#!/bin/bash -xv
+#!/bin/bash
 
 # Install directory
 INSTALL_DIR=/opt/fzf
