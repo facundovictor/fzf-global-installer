@@ -3,9 +3,8 @@
 # Install directory
 INSTALL_DIR=/opt/fzf
 
-mkdir -p $INSTALL_DIR
-
 function git_clone () {
+    mkdir -p $INSTALL_DIR
     git clone --depth 1 https://github.com/junegunn/fzf.git $INSTALL_DIR
 }
 
@@ -26,4 +25,14 @@ function copy_config_files () {
     cp profile.d/fzf.sh    /etc/profile.d/fzf.sh
 }
 
+function remove_previous_version () {
+    rm -rf $INSTALL_DIR
+}
 
+remove_previous_version
+git_clone
+install_fzf
+set_install_dir
+copy_config_files
+
+echo "FZF Installed."
