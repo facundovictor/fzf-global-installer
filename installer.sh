@@ -34,6 +34,14 @@ function remove_previous_version () {
     rm -rf $INSTALL_DIR
 }
 
+# Install pygementize for coloring preview
+function install_addons () {
+	which pip > /dev/null 2>&1
+	if [ $? -eq 0 ] ; then
+		pip install Pygments
+	fi
+}
+
 ###############################################################################
 
 # Installation sequence
@@ -42,5 +50,6 @@ git_clone
 install_fzf
 set_install_dir
 copy_config_files
+install_addons
 
 echo "FZF Installed."
