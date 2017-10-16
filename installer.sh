@@ -26,7 +26,7 @@ function copy_config_files () {
     cp etc/fzf/.fzf.bash   /etc/fzf/.fzf.bash
     cp etc/fzf/.fzf.zsh    /etc/fzf/.fzf.zsh
     cp etc/fzf/.fzf.config /etc/fzf/.fzf.config
-    cp profile.d/fzf.sh    /etc/profile.d/fzf.sh
+    cp -u etc/profile.d/fzf.sh /etc/profile.d/fzf.sh
 }
 
 # Erase all previous fzf installations
